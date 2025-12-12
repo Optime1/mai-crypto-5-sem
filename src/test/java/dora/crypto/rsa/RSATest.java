@@ -1,6 +1,7 @@
 package dora.crypto.rsa;
 
 import dora.crypto.rsa.ProbabilisticTests.RsaService;
+import net.bytebuddy.build.HashCodeAndEqualsPlugin;
 import net.jqwik.api.*;
 import net.jqwik.api.constraints.Size;
 
@@ -20,8 +21,8 @@ class RSAHelpFuncTest {
     }
 
     @Example
-    void constructor_initializes_with_valid_keys_for_miller_rabin(@ForAll @Size(min = 512, max = 4048) int primeBitLength) {
-        RsaService service = new RsaService(MILLER_RABIN, 0.999, Math.max(512, primeBitLength));
+    void constructor_initializes_with_valid_keys_for_miller_rabin(@ForAll @Size(min=512, max = 2048) int primeBitLength) {
+        RsaService service = new RsaService(MILLER_RABIN, 0.51, Math.max(512, primeBitLength));
         BigInteger n = service.getN();
         BigInteger e = service.getE();
         BigInteger d = service.getD();

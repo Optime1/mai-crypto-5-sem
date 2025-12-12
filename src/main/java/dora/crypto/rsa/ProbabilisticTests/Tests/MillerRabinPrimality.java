@@ -25,12 +25,13 @@ public class MillerRabinPrimality extends AbstractProbabilisticPrimality {
             s++;
         }
 
-        // a^d mod n
+        // a^d = 1 (mod n)
         BigInteger x = NumberTheory.modPow(a, oddD, n);
         if (x.equals(ONE) || x.equals(n.subtract(ONE))) {
             return true;
         }
 
+        // E a^(d*2^r) = -1 (mod n)
         for (int r = 1; r < s; r++) {
             x = NumberTheory.modPow(x, TWO, n); // x = x^2 mod n
             if (x.equals(n.subtract(ONE))) {

@@ -12,6 +12,6 @@ public class FermatPrimality extends AbstractProbabilisticPrimality {
     protected boolean iteration(BigInteger a, BigInteger n) {
         BigInteger exp = n.subtract(ONE);
         BigInteger res = NumberTheory.modPow(a, exp, n);
-        return res.equals(ONE);
+        return res.equals(ONE); // a^(n-1) = 1 (mod n)
     }
 }

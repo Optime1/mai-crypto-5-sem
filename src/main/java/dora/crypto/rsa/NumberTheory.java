@@ -48,28 +48,20 @@ public class NumberTheory {
             throw new ArithmeticException("Modulus must not be zero");
         }
 
-        BigInteger t = BigInteger.ZERO, newT = BigInteger.ONE;
-        BigInteger r = m, newR = a.abs().mod(m);
+        BigInteger[] gcdResult = extendedGcd(a, m);
+        BigInteger gcd = gcdResult[0];
+        BigInteger x = gcdResult[1];
 
-        while (!newR.equals(BigInteger.ZERO)) {
-            BigInteger quotient = r.divide(newR);
-            BigInteger temp = newT;
-            newT = t.subtract(quotient.multiply(newT));
-            t = temp;
-
-            temp = newR;
-            newR = r.subtract(quotient.multiply(temp));
-            r = temp;
-        }
-
-        if (!r.equals(BigInteger.ONE)) {
+        if (!gcd.equals(BigInteger.ONE)) {
             throw new ArithmeticException("Inverse does not exist: gcd(a, m) != 1");
         }
 
-        if (t.signum() < 0) {
-            t = t.add(m);
+        BigInteger inverse = x.mod(m);
+        if (inverse.signum() < 0) {
+            inverse = inverse.add(m);
         }
-        return t;
+
+        return inverse;
     }
 
     public static BigInteger jacobiSymbol(BigInteger a, BigInteger n) {
@@ -88,26 +80,26 @@ public class NumberTheory {
             if (n.mod(BigInteger.valueOf(4)).equals(BigInteger.valueOf(3))) {
                 r = r.negate();
             }
-        }
+        } // change sign if n = 3 (mod 4)
 
         while (!a.equals(BigInteger.ZERO)) {
             int t = 0;
             while (a.mod(BigInteger.TWO).equals(BigInteger.ZERO)) {
                 t++;
                 a = a.divide(BigInteger.TWO);
-            }
+            } //
 
             if (t % 2 != 0) {
                 BigInteger bMod8 = n.mod(BigInteger.valueOf(8));
                 if (bMod8.equals(BigInteger.valueOf(3)) || bMod8.equals(BigInteger.valueOf(5))) {
                     r = r.negate();
                 }
-            }
+            } //(2/n) = -1 if n ≡ 3, 5 (mod 8)
 
             if (a.mod(BigInteger.valueOf(4)).equals(BigInteger.valueOf(3)) &&
                     n.mod(BigInteger.valueOf(4)).equals(BigInteger.valueOf(3))) {
                 r = r.negate();
-            }
+            } // if a and n = 3 (mod 4)  change sign
 
             BigInteger temp = a;
             a = n.mod(temp);
@@ -118,21 +110,8 @@ public class NumberTheory {
     }
 
     public static BigInteger legendreSymbol(BigInteger a, BigInteger p) {
-        if (p.compareTo(BigInteger.ZERO) <= 0 || !isPrime(p)) {
+        if (p.compareTo(BigInteger.valueOf(2)) <= 0 || !isPrime(p)) {
             throw new IllegalArgumentException("p must be a positive prime");
-        }
-
-        if (p.equals(BigInteger.TWO)) {
-            a = a.mod(p);
-            if (a.equals(BigInteger.ZERO)) {
-                return BigInteger.ZERO;
-            }
-            BigInteger aMod8 = a.mod(BigInteger.valueOf(8));
-            if (aMod8.equals(BigInteger.ONE) || aMod8.equals(BigInteger.valueOf(7))) {
-                return BigInteger.ONE;
-            } else {
-                return BigInteger.valueOf(-1);
-            }
         }
 
         return jacobiSymbol(a, p);

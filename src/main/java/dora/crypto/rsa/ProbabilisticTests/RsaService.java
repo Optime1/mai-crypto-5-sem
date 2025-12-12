@@ -81,9 +81,8 @@ public class RsaService {
                 d = NumberTheory.modInverse(PUBLIC_EXPONENT, phi);
 
                 // Wiener's attack is effective if d is "too small",
-                // specifically d < (1/3)*N^(1/4)
+                // specifically d < N^(1/4)/3
                 // FIPS 186-4 requires d > 2^(nlen/2), where nlen = N.bitLength()
-                // nlen~2*(bitLength/2), where bitLength is the bit length of p/q
                 BigInteger minD = TWO.pow(N.bitLength() / 2);
                 if (d.compareTo(minD) <= 0) {
                     continue;

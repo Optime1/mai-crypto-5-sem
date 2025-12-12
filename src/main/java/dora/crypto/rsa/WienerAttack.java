@@ -47,7 +47,7 @@ public class WienerAttack {
                 assert nSqrt != null;
                 BigInteger nFourthRoot = isqrt(nSqrt);
                 assert nFourthRoot != null;
-                BigInteger wienerLimit = nFourthRoot.divide(BigInteger.valueOf(3));
+                BigInteger wienerLimit = nFourthRoot.divide(BigInteger.valueOf(3)); // d < N^(1/4)/3
 
                 if (d.compareTo(wienerLimit) >= 0) {
                     continue;
@@ -73,9 +73,6 @@ public class WienerAttack {
             }
         }
 
-        /**
-         * Newton-Raphson
-         */
         private static BigInteger isqrt(BigInteger n) {
 
             if (n.signum() < 0) return null;

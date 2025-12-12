@@ -21,6 +21,8 @@ public class SolovayStrassenPrimality extends AbstractProbabilisticPrimality {
 
         BigInteger right = NumberTheory.jacobiSymbol(a, n);
 
+        // a^(n - 1)/2 = (a/n) (mod n)
+
         if (right.equals(BigInteger.valueOf(-1))) {
             right = n.subtract(ONE);
         }

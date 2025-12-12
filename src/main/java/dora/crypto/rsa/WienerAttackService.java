@@ -14,7 +14,7 @@ public class WienerAttackService {
     private static final BigInteger TWO = BigInteger.TWO;
     private static final BigInteger FOUR = BigInteger.valueOf(4);
 
-    private final ProbabilisticPrimality primalityTest;  // Для проверки p, q (опционально)
+    private final ProbabilisticPrimality primalityTest;
     private final double minProbability;
 
     public WienerAttackService(RsaService.PrimalityTest test, double minProbability) {
@@ -45,9 +45,9 @@ public class WienerAttackService {
 
             if (kappa.equals(ZERO)) continue;
 
+            // ed - k phi = 1
             BigInteger edMinus1 = e.multiply(dCand).subtract(ONE);
             if (!edMinus1.mod(kappa).equals(ZERO)) continue;
-
             BigInteger phi = edMinus1.divide(kappa);
 
 
@@ -58,11 +58,11 @@ public class WienerAttackService {
             sqrtDisc = isqrt(disc);
             if (sqrtDisc == null || !sqrtDisc.multiply(sqrtDisc).equals(disc)) continue;
 
+            // x² - (N - φ(N) + 1)x + N = 0 root is p and q
             if (trace.add(sqrtDisc).mod(TWO).equals(ZERO) && trace.subtract(sqrtDisc).mod(TWO).equals(ZERO)) {
                 p = trace.add(sqrtDisc).divide(TWO);
                 q = trace.subtract(sqrtDisc).divide(TWO);
                 if (p.multiply(q).equals(n)) {
-                    // Опционально: проверить простоту p, q
                     if (primalityTest.isProbablyPrime(p, minProbability) && primalityTest.isProbablyPrime(q, minProbability)) {
                         return Optional.of(new AttackResult(dCand, phi, new ArrayList<>(convergents)));
                     }
@@ -100,8 +100,8 @@ public class WienerAttackService {
         BigInteger kPrev = ZERO;      // k_{-1}
 
         for (BigInteger a : cf) {
-            BigInteger h = a.multiply(hPrev).add(hPrevPrev);
-            BigInteger k = a.multiply(kPrev).add(kPrevPrev);
+            BigInteger h = a.multiply(hPrev).add(hPrevPrev);  // hₙ = aₙ*hₙ₋₁ + hₙ₋₂
+            BigInteger k = a.multiply(kPrev).add(kPrevPrev);  // kₙ = aₙ*kₙ₋₁ + kₙ₋₂
             convergents.add(new Convergent(h, k));
             hPrevPrev = hPrev;
             hPrev = h;

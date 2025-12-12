@@ -7,7 +7,7 @@ import java.util.Objects;
 
 public final class RijndaelParameters {
 
-    private static final short AES_MODULUS = 0x11b;
+    private static final short AES_MODULUS = 0x11b; // x^8 + x^4 + x^3 + x + 1
 
     private final KeySize keySize;
     private final BlockSize blockSize;

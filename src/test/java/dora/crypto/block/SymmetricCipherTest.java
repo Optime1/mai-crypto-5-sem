@@ -1,5 +1,6 @@
-package dora.crypto;
+package dora.crypto.block;
 
+import dora.crypto.SymmetricCipher;
 import dora.crypto.SymmetricCipher.CipherModeType;
 import dora.crypto.SymmetricCipher.PaddingType;
 import dora.crypto.block.deal.DealBlockCipher;
@@ -7,6 +8,7 @@ import dora.crypto.block.des.DesBlockCipher;
 import dora.crypto.block.rijndael.*;
 import dora.crypto.block.rijndael.RijndaelParameters.BlockSize;
 import dora.crypto.block.rijndael.RijndaelParameters.KeySize;
+import dora.crypto.block.tripleDes.TripleDesBlockCipher;
 import net.jqwik.api.*;
 import net.jqwik.api.constraints.Positive;
 import net.jqwik.api.constraints.Size;
@@ -395,6 +397,107 @@ public class SymmetricCipherTest {
                 .iv(iv)
                 .arguments(counter, seed)
                 .build()
+        );
+    }
+
+    @Example
+    void decryptFile_3DES_CBC_Pkcs7Padding(
+            @ForAll @Size(value = 16) byte[] key,
+            @ForAll @Size(value = 8) byte[] iv
+    ) throws IOException, InterruptedException {
+        decryptFileTests(
+                SymmetricCipher.builder()
+                        .cipher(new TripleDesBlockCipher())
+                        .mode(CipherModeType.CBC)
+                        .padding(PaddingType.PKCS7)
+                        .key(key)
+                        .iv(iv)
+                        .build()
+        );
+    }
+
+    @Example
+    void decryptFile_3DES_PCBC_ZerosPadding(
+            @ForAll @Size(value = 24) byte[] key,
+            @ForAll @Size(value = 8) byte[] iv
+    ) throws IOException, InterruptedException {
+        decryptFileTests(
+                SymmetricCipher.builder()
+                        .cipher(new TripleDesBlockCipher())
+                        .mode(CipherModeType.PCBC)
+                        .padding(PaddingType.ZEROS)
+                        .key(key)
+                        .iv(iv)
+                        .build()
+        );
+    }
+
+    @Example
+    void decryptFile_3DES_OFB_ISO_10126Padding(
+            @ForAll @Size(value = 24) byte[] key,
+            @ForAll @Size(value = 8) byte[] iv
+    ) throws IOException, InterruptedException {
+        decryptFileTests(
+                SymmetricCipher.builder()
+                        .cipher(new TripleDesBlockCipher())
+                        .mode(CipherModeType.OFB)
+                        .padding(PaddingType.ISO_10126)
+                        .key(key)
+                        .iv(iv)
+                        .build()
+        );
+    }
+
+    @Example
+    void decryptFile_3DES_CFB_ISO_10126Padding(
+            @ForAll @Size(value = 24) byte[] key,
+            @ForAll @Size(value = 8) byte[] iv
+    ) throws IOException, InterruptedException {
+        decryptFileTests(
+                SymmetricCipher.builder()
+                        .cipher(new TripleDesBlockCipher())
+                        .mode(CipherModeType.CFB)
+                        .padding(PaddingType.ISO_10126)
+                        .key(key)
+                        .iv(iv)
+                        .build()
+        );
+    }
+
+    @Example
+    void decryptFile_3DES_RandomDelta_AnsiX923Padding(
+            @ForAll @Size(value = 24) byte[] key,
+            @ForAll @Size(value = 4) byte[] iv,
+            @ForAll @Positive int counter,
+            @ForAll long seed
+    ) throws IOException, InterruptedException {
+        decryptFileTests(
+                SymmetricCipher.builder()
+                        .cipher(new TripleDesBlockCipher())
+                        .mode(CipherModeType.RANDOM_DELTA)
+                        .padding(PaddingType.ANSI_X923)
+                        .key(key)
+                        .iv(iv)
+                        .arguments(counter, seed)
+                        .build()
+        );
+    }
+
+    @Example
+    void decryptFile_3DES_CTR_PKCS7Padding(
+            @ForAll @Size(value = 24) byte[] key,
+            @ForAll @Size(value = 4) byte[] iv,
+            @ForAll @Positive int counter
+    ) throws IOException, InterruptedException {
+        decryptFileTests(
+                SymmetricCipher.builder()
+                        .cipher(new TripleDesBlockCipher())
+                        .mode(CipherModeType.CTR)
+                        .padding(PaddingType.PKCS7)
+                        .key(key)
+                        .iv(iv)
+                        .arguments(counter)
+                        .build()
         );
     }
 
