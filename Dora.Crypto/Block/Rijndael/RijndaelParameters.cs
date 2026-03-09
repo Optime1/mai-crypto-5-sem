@@ -47,9 +47,9 @@ public sealed class RijndaelParameters
 
     public int Rounds() => Math.Max(_keySize.Words(), _blockSize.Words()) + 6;
 
-    public RijndaelParameters.KeySize KeySize => _keySize;
+    public RijndaelParameters.KeySize GetKeySize() => _keySize;
 
-    public RijndaelParameters.BlockSize BlockSize => _blockSize;
+    public RijndaelParameters.BlockSize GetBlockSize() => _blockSize;
 
     public short Modulus() => _modulus;
 
