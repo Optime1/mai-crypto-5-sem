@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyName>Dora.Crypto</AssemblyName>
+    <RootNamespace>Dora.Crypto</RootNamespace>
+    <Version>1.0.0</Version>
+    <Authors>Dora</Authors>
+    <Description>Cryptographic library with various encryption algorithms (DES, RC5, Rijndael/AES, RC4, RSA, Diffie-Hellman)</Description>
+  </PropertyGroup>
+
+</Project>
