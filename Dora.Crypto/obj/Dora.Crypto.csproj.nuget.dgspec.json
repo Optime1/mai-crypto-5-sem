@@ -1,32 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\zaxar\\OneDrive\\Документы\\GitHub\\mai-crypto-5-sem\\Dora.Crypto\\Dora.Crypto.csproj": {}
+    "/workspace/Dora.Crypto/Dora.Crypto.csproj": {}
   },
   "projects": {
-    "C:\\Users\\zaxar\\OneDrive\\Документы\\GitHub\\mai-crypto-5-sem\\Dora.Crypto\\Dora.Crypto.csproj": {
+    "/workspace/Dora.Crypto/Dora.Crypto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zaxar\\OneDrive\\Документы\\GitHub\\mai-crypto-5-sem\\Dora.Crypto\\Dora.Crypto.csproj",
+        "projectUniqueName": "/workspace/Dora.Crypto/Dora.Crypto.csproj",
         "projectName": "Dora.Crypto",
-        "projectPath": "C:\\Users\\zaxar\\OneDrive\\Документы\\GitHub\\mai-crypto-5-sem\\Dora.Crypto\\Dora.Crypto.csproj",
-        "packagesPath": "C:\\Users\\zaxar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zaxar\\OneDrive\\Документы\\GitHub\\mai-crypto-5-sem\\Dora.Crypto\\obj\\",
+        "projectPath": "/workspace/Dora.Crypto/Dora.Crypto.csproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/workspace/Dora.Crypto/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\zaxar\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/root/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -44,8 +37,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.300"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -66,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.311/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.418/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
