@@ -2,32 +2,35 @@
 # Build artifacts
 bin/
 obj/
-out/
 *.dll
 *.exe
 *.pdb
-*.so
-*.dylib
-*.class
+*.userprefs
 
 # Dependencies
 packages/
 node_modules/
-vendor/
 
-# IDE files
-.vs/
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+*.env.*
+
+# Editors
 .vscode/
 .idea/
-*.userprefs
-*.user
-*.suo
-*.userosscache
-*.sln.docstates
+*.swp
+*.swo
 
-# OS files
+# OS
 .DS_Store
 Thumbs.db
-ehthumbs.db
-Icon?
+
+# Test and coverage
+coverage/
+htmlcov/
+*.coverage
 ```
