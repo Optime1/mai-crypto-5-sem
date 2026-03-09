@@ -1,5 +1,7 @@
 namespace Dora.Crypto.Block.Rijndael;
 
+using System;
+
 /// <summary>
 /// Параметры алгоритма Rijndael (размеры ключа и блока, модуль, S-Box).
 /// </summary>

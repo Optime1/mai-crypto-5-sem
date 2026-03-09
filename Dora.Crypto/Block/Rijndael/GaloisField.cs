@@ -1,6 +1,8 @@
 namespace Dora.Crypto.Block.Rijndael;
 
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 /// <summary>
 /// Арифметика в поле Галуа GF(2^8).
