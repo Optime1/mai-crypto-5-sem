@@ -1,0 +1,14 @@
+/workspace/Dora.Crypto/bin/Debug/net8.0/Dora.Crypto
+/workspace/Dora.Crypto/bin/Debug/net8.0/Dora.Crypto.deps.json
+/workspace/Dora.Crypto/bin/Debug/net8.0/Dora.Crypto.runtimeconfig.json
+/workspace/Dora.Crypto/bin/Debug/net8.0/Dora.Crypto.dll
+/workspace/Dora.Crypto/bin/Debug/net8.0/Dora.Crypto.pdb
+/workspace/Dora.Crypto/obj/Debug/net8.0/Dora.Crypto.GeneratedMSBuildEditorConfig.editorconfig
+/workspace/Dora.Crypto/obj/Debug/net8.0/Dora.Crypto.AssemblyInfoInputs.cache
+/workspace/Dora.Crypto/obj/Debug/net8.0/Dora.Crypto.AssemblyInfo.cs
+/workspace/Dora.Crypto/obj/Debug/net8.0/Dora.Crypto.csproj.CoreCompileInputs.cache
+/workspace/Dora.Crypto/obj/Debug/net8.0/Dora.Crypto.dll
+/workspace/Dora.Crypto/obj/Debug/net8.0/refint/Dora.Crypto.dll
+/workspace/Dora.Crypto/obj/Debug/net8.0/Dora.Crypto.pdb
+/workspace/Dora.Crypto/obj/Debug/net8.0/Dora.Crypto.genruntimeconfig.cache
+/workspace/Dora.Crypto/obj/Debug/net8.0/ref/Dora.Crypto.dll
