@@ -6,60 +6,135 @@
 *.so
 *.a
 *.out
-*.pyc
-__pycache__/
-*.class
-*.jar
-*.war
-*.zip
-*.tar.gz
-*.tar.bz2
-*.tar.xz
 
 # Dependencies
-node_modules/
-venv/
-.venv/
+**/bin/
+**/obj/
+**/packages/
+*.nupkg
+*.snupkg
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+
+# Environment
 .env
 .env.local
-.env.*
-
-# Build directories
-dist/
-build/
-target/
-.out/
+*.env.*
 
 # Editors
 .vscode/
 .idea/
-*.swp
-*.swo
-*.tmp
+*.userprefs
+*.user
 
-# Logs
-*.log
+# Build outputs
+Debug/
+Release/
+x64/
+x86/
+build/
+dist/
 
-# Coverage
-coverage/
-htmlcov/
-.coverage
+# Test results
+TestResults/
+*.testsettings
+*.trx
 
-# OS
+# OS generated files
 .DS_Store
 Thumbs.db
+ehthumbs.db
+Icon?
+._*
 
-# MyPy
-.mypy_cache/
+# Configuration specific files
+appsettings.*.json
+*.config.bak
+*.lock.json
 
-# PyTest
-.pytest_cache/
+# Package manager
+project.lock.json
+*.csproj.user
+*.userosscache
+*.sln.docstates
 
-# Gradle
-.gradle/
+# Coverage reports
+coverage/
+*.coverage
+*.coveragexml
 
-# Julia
-julia-*/
-
-# Zig
-zig-out/
+# Temporary files
+temp_*
+*~
+*.bak
+*.cache
+*.ilk
+*.meta
+!*.cs
+!*.vb
+!*.fs
+!*.cpp
+!*.h
+!*.hpp
+!*.cxx
+!*.hxx
+!*.cc
+!*.hh
+!*.c++
+!*.h++
+!*.inl
+!*.ixx
+!*.cppm
+!*.mpp
+!*.mpw
+!*.cmd
+!*.bat
+!*.sh
+!*.pl
+!*.pm
+!*.py
+!*.rb
+!*.php
+!*.js
+!*.ts
+!*.jsx
+!*.tsx
+!*.css
+!*.scss
+!*.sass
+!*.less
+!*.html
+!*.htm
+!*.xml
+!*.json
+!*.yml
+!*.yaml
+!*.toml
+!*.ini
+!*.cfg
+!*.conf
+!*.txt
+!*.md
+!*.rst
+!*.tex
+!*.pdf
+!*.doc
+!*.docx
+!*.xls
+!*.xlsx
+!*.ppt
+!*.pptx
+!*.svg
+!*.png
+!*.jpg
+!*.jpeg
+!*.gif
+!*.bmp
+!*.ico
+!*.tiff
+!*.webp
+!*.avif
+!*.apng
