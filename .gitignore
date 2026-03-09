@@ -6,18 +6,5 @@ obj/
 *.pdb
 
 # Dependencies
-packages/
-
-# Logs and temp files
-*.log
-*.tmp
-
-# Environment
-.env
-.env.local
-*.env.*
-
-# Editors
-.vscode/
-.idea/
+packages-microsoft-prod.deb
 ```
