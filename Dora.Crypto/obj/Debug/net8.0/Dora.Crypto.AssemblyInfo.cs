@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Dora.Crypto")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0f35f637e88690e22d5a8dee0e3115de2b1aecb4")]
+<<<<<<< HEAD
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6da14fd12ca1417f059f5aea0c09cf26746eeee3")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+75161929cfd8e095eb963caafc0af0803fe30c6b")]
+>>>>>>> d6e8ad866e05ac98bfbed498e13ba58d6c2d4b95
 [assembly: System.Reflection.AssemblyProductAttribute("Dora.Crypto")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Dora.Crypto")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
