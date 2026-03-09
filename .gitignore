@@ -1,9 +1,7 @@
 ```
-# Build artifacts
+# Build results
 bin/
 obj/
-*.dll
-*.pdb
 
 # Dependencies
 packages-microsoft-prod.deb
