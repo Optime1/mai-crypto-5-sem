@@ -65,11 +65,10 @@ namespace Dora.Crypto
 
             try
             {
-                IBlockCipher cipher = CreateCipher(selectedCipher);
+                IBlockCipher cipher = CreateCipher(selectedCipher, key);
                 
                 // Шифрование
                 byte[] cipherText = new byte[plainText.Length];
-                cipher.Init(key);
                 cipherText = cipher.Encrypt(plainText);
 
                 Console.WriteLine($"Шифротекст: {ToHex(cipherText)}");
@@ -100,7 +99,7 @@ namespace Dora.Crypto
             // Console.ReadKey();
         }
 
-        static IBlockCipher CreateCipher(CipherType type)
+        static IBlockCipher CreateCipher(CipherType type, byte[] key)
         {
             switch (type)
             {
@@ -111,7 +110,7 @@ namespace Dora.Crypto
                 case CipherType.DEAL_128:
                 case CipherType.DEAL_192:
                 case CipherType.DEAL_256:
-                    return new DealBlockCipher();
+                    return new DealBlockCipher(key);
                 default:
                     throw new ArgumentException("Неподдерживаемый шифр");
             }
