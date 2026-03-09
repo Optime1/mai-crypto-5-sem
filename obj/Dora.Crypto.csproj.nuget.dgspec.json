@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\zaxar\\OneDrive\\Документы\\GitHub\\mai-crypto-5-sem\\Dora.Crypto\\Dora.Crypto.csproj": {}
+    "C:\\Users\\zaxar\\OneDrive\\Документы\\GitHub\\mai-crypto-5-sem\\Dora.Crypto.csproj": {}
   },
   "projects": {
-    "C:\\Users\\zaxar\\OneDrive\\Документы\\GitHub\\mai-crypto-5-sem\\Dora.Crypto\\Dora.Crypto.csproj": {
+    "C:\\Users\\zaxar\\OneDrive\\Документы\\GitHub\\mai-crypto-5-sem\\Dora.Crypto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zaxar\\OneDrive\\Документы\\GitHub\\mai-crypto-5-sem\\Dora.Crypto\\Dora.Crypto.csproj",
+        "projectUniqueName": "C:\\Users\\zaxar\\OneDrive\\Документы\\GitHub\\mai-crypto-5-sem\\Dora.Crypto.csproj",
         "projectName": "Dora.Crypto",
-        "projectPath": "C:\\Users\\zaxar\\OneDrive\\Документы\\GitHub\\mai-crypto-5-sem\\Dora.Crypto\\Dora.Crypto.csproj",
+        "projectPath": "C:\\Users\\zaxar\\OneDrive\\Документы\\GitHub\\mai-crypto-5-sem\\Dora.Crypto.csproj",
         "packagesPath": "C:\\Users\\zaxar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zaxar\\OneDrive\\Документы\\GitHub\\mai-crypto-5-sem\\Dora.Crypto\\obj\\",
+        "outputPath": "C:\\Users\\zaxar\\OneDrive\\Документы\\GitHub\\mai-crypto-5-sem\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -22,7 +22,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "netstandard2.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -30,8 +30,8 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
             "projectReferences": {}
           }
         },
@@ -48,8 +48,16 @@
         "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -61,12 +69,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.311/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.311\\RuntimeIdentifierGraph.json"
         }
       }
     }
